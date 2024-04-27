@@ -6,37 +6,40 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dela" />
+
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
+        android:id="@+id/fr_del"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        tools:layout="@layout/fragment_blank"
+        app:layout_constraintStart_toEndOf="@+id/akk"
+        tools:layout="@layout/fragment_blank2"
         tools:layout_editor_absoluteY="-16dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/akk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="аккаунт"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/dela"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="дела"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/akk" />
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="402dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

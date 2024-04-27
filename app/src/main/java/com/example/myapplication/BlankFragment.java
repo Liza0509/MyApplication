@@ -4,60 +4,61 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.LinkedList;
+
 public class BlankFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public BlankFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BlankFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static BlankFragment newInstance(String param1, String param2) {
-        BlankFragment fragment = new BlankFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    ListView lv;
+    String[] myArr = { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        //lv = lv.findViewById(R.id.list);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+
+        View res = inflater.inflate(R.layout.fragment_blank, container, false);
+
+        lv = res.findViewById(R.id.list);
+        ArrayAdapter<String> monthAdapter =
+                new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, myArr);
+
+        lv.setAdapter(monthAdapter);
+
+        MyMonthAdapter adapter = new MyMonthAdapter(getContext(), makeMonth());
+        ListView lv = res.findViewById(R.id.list);
+        lv.setAdapter(adapter);
+        return res;
     }
+
+    LinkedList<MyMonth> makeMonth() {
+        LinkedList<MyMonth> arr = new LinkedList();
+
+// Названия месяцев
+        String[] name = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
+// Среднесуточная температура
+        double[] impr = {-12.7, -11.3, -4.5, 7.7, 19.3, 23.9, 23.5, 22.8, 16.0, 5.2, -0.3, -9.3};
+// Количество дней
+        int[] dayArr = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+// Сборка месяцев
+        for (int i = 0; i < name.length; i++) {
+            MyMonth month = new MyMonth();
+            month.name = name[i];
+            month.impr = impr[i];
+            month.rew = dayArr[i];
+            arr.add(month);
+        }
+        return arr;
+    }
+
+
 }
