@@ -5,12 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-public class ButtonFragment extends Fragment {
-
+public class Fr_add extends Fragment {
+    EditText name;
+    EditText sroki;
+    EditText nagrada;
     @Override
     // Переопределяем метод onCreateView
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -19,12 +22,18 @@ public class ButtonFragment extends Fragment {
         // менеджер компоновки, который позволяет
         // получать доступ к layout с наших ресурсов
         View view = inflater
-                .inflate(R.layout.fragment_button, container, false);
+                .inflate(R.layout.fr_add, container, false);
 
         // теперь можем достучаться до наших элементов, расположенных во
         // фрагменте
-        Button button = view.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+
+        Button back = view.findViewById(R.id.back);
+        Button ok = view.findViewById(R.id.ok);
+        EditText name =  view.findViewById(R.id.name);
+        EditText sroki =  view.findViewById(R.id.sroki);
+        EditText nagrada =  view.findViewById(R.id.nagrada);
+
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Сообщение из фрагмента", Toast.LENGTH_LONG).show();

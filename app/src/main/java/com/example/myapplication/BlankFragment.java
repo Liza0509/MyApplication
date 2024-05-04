@@ -39,24 +39,24 @@ public class BlankFragment extends Fragment {
         return res;
     }
 
-    LinkedList<MyMonth> makeMonth() {
-        LinkedList<MyMonth> arr = new LinkedList();
+    LinkedList<MyTasks> makeMonth() {
+        LinkedList<MyTasks> arr = new LinkedList();
 
-// Названия месяцев
+
         String[] name = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
-// Среднесуточная температура
+
         double[] impr = {-12.7, -11.3, -4.5, 7.7, 19.3, 23.9, 23.5, 22.8, 16.0, 5.2, -0.3, -9.3};
-// Количество дней
+
         int[] dayArr = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-// Сборка месяцев
-        for (int i = 0; i < name.length; i++) {
-            MyMonth month = new MyMonth();
-            month.name = name[i];
-            month.impr = impr[i];
-            month.rew = dayArr[i];
+
+
+            MyTasks month = new MyTasks();
+            month.name = name;
+            month.impr = impr;
+            month.rew = dayArr;
             arr.add(month);
-        }
+
         return arr;
     }
 
