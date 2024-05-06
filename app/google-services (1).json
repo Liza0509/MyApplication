@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "703952184620",
+    "project_id": "frbs-1971e",
+    "storage_bucket": "frbs-1971e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703952184620:android:3d906b5ef5a35c31963889",
+        "android_client_info": {
+          "package_name": "Final.project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6lgoOpzN3hscdLKQAvE-UBzzJJLK3Jbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
