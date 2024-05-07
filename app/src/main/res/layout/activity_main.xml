@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/akk"
-        tools:layout="@layout/fragment_blank2"
+        tools:layout="@layout/login_fr"
         tools:layout_editor_absoluteY="-16dp" />
 
     <Button
