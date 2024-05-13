@@ -25,9 +25,9 @@ public class MyMonthAdapter extends ArrayAdapter<MyTasks> {
         }
 
 // Заполняем адаптер
-        ((TextView) convertView.findViewById(R.id.textView)).setText(month.name);
-        ((TextView) convertView.findViewById(R.id.textView2)).setText(String.valueOf(month.impr));
-        ((TextView) convertView.findViewById(R.id.textView3)).setText(String.valueOf(month.rew));
+        //((TextView) convertView.findViewById(R.id.textView)).setText(month.name);
+        //((TextView) convertView.findViewById(R.id.textView2)).setText(String.valueOf(month.impr));
+        //((TextView) convertView.findViewById(R.id.textView3)).setText(String.valueOf(month.rew));
 // Выбираем картинку для месяца
 
         return convertView;

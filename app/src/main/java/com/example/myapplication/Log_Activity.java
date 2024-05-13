@@ -16,15 +16,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Log_Activity extends AppCompatActivity {
-    EditText email = findViewById(R.id.email);
-    EditText password = findViewById(R.id.password);
-    Button bt_log = findViewById(R.id.bt_log);
+    EditText email;
+    EditText password;
+    Button bt_log;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-
-
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        bt_log = findViewById(R.id.bt_log);
         bt_log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

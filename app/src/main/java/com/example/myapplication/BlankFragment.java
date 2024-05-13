@@ -51,11 +51,11 @@ public class BlankFragment extends Fragment {
 
 
 
-        MyTasks month = new MyTasks();
-        //month.name = name;
-        //month.impr = impr;
-        //month.rew = dayArr;
-        arr.add(month);
+        //MyTasks month = new MyTasks();
+        ////month.name = name;
+        ////month.impr = impr;
+        ////month.rew = dayArr;
+        //arr.add(month);
 
         return arr;
     }

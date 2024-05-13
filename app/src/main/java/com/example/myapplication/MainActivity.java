@@ -12,16 +12,18 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     Button add;
-    Button bt;
+    Button akk;
+    Button dela;
     String[] myArr = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bt = findViewById(R.id.dela);
+        dela = findViewById(R.id.dela);
         add = findViewById(R.id.add);
-        bt.setOnClickListener(new View.OnClickListener() {
+        akk = findViewById(R.id.akk);
+        dela.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BlankFragment fragment = new BlankFragment();
@@ -41,12 +43,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        akk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Registr_Activity.class));
+            }
+        });
+
 
 
 
         if(FirebaseAuth.getInstance().getCurrentUser()== null){
-            startActivity(new Intent(MainActivity.this, Registr_Activity.class));
+            startActivity(new Intent(MainActivity.this, Log_Activity.class));
         }
+        //по кнопке выйти FirebaseAuth.getInstance().getCurrentUser()== null
     }
 
 }
